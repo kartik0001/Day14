@@ -26,17 +26,17 @@ try:
     cursor = con.cursor()
 
 query1 = "create table zipcodes(zipcodeid int(6) primary key, city varchar(20), state varchar(20), zipcode int(6));"
-records1 = [(248001, 'Dehradun', 'Uttarakhand',248001),(249193, 'Uttarkashi', 'Uttarakhand',249193)]
+records1 = [(248001, 'Dehradun', 'Uttarakhand',248001),(249194, 'Rishikesh', 'Uttarakhand',249194)]
 cursor.executemany(query1, records1)
 
 
 query2 = "create table publishers(publisherid int(6) primary key, name varchar(20), streetaddress varchar(50), streetno int(6), zipcodeid int(6), FOREIGN KEY (zipcodeid) REFERENCES zipcodes(zipcodesid));"
-records2 = [(1, 'Tarun', 'Sarvoday Ashram Ujeli',1,249193),(2, 'Ashu', 'Baker's Street Premnagar',1,248001)]
+records2 = [(1, 'Ajay', 'Premnagar',1,249193),(2, 'Anmol', 'GeneralWing Premnagar',1,248001)]
 cursor.executemany(query2, records2)
 
 
 query3 = "create table authors(authorid int(6) primary key, firstname varchar(20), middlename varchar(20),lastname varchar(20) );"
-records3 = [(1,'Samyak','Kumar','Sinha'),(2,'Rahul','Pratap','Singh')]
+records3 = [(1,'Rajat','Kumar','Singh'),(2,'Rajan','Pratap','Singh')]
 cursor.executemany(query3, records3)
 
 
@@ -52,7 +52,7 @@ cursor.executemany(query5, records5)
 
 
 query6 = "create table book(bookid int(5) primary key, titleid varchar(10), location varchar(20), genre varchar(20),FOREIGN KEY (bookid) REFERENCES titles(titleidid));"
-records6 = [(1, 'Book1', 'Dehradun','Comedy'),(2,'Book2','Uttarkshi','Thriller')]
+records6 = [(1, 'Book1', 'Dehradun','Comedy'),(2,'Book2','Roorkee','Thriller')]
 cursor.executemany(query6, records6)
 
 
